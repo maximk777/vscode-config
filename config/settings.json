@@ -1,0 +1,156 @@
+{
+    // ============ Privacy / background activity ============
+    "telemetry.telemetryLevel": "off",
+    "redhat.telemetry.enabled": false,
+    "update.mode": "none",
+    "update.showReleaseNotes": false,
+    "extensions.autoUpdate": "off",
+    "extensions.autoCheckUpdates": false,
+    "extensions.ignoreRecommendations": true,
+    "workbench.enableExperiments": false,
+    "workbench.settings.enableNaturalLanguageSearch": false,
+
+    // ============ Built-in AI / Copilot: fully disabled ============
+    // Master switch: hides chat, inline suggestions, Copilot UI,
+    // and disables the built-in Copilot extensions
+    "chat.disableAIFeatures": true,
+    "workbench.settings.showAISearchToggle": false,
+    "editor.inlineSuggest.enabled": false,
+    "github.copilot.enable": {
+        "*": false
+    },
+
+    // ============ Startup ============
+    "workbench.startupEditor": "none",
+    // No windows on app start: VS Code is pre-warmed at login by a LaunchAgent
+    // (~/Library/LaunchAgents/com.user.vscode-warm.plist) and stays in the
+    // background, so `code <path>` opens a window almost instantly
+    "window.restoreWindows": "none",
+    "security.workspace.trust.enabled": false,
+
+    // Heavy extensions run in their own extension host processes,
+    // so gopls CPU spikes don't block YAML and vice versa
+    "extensions.experimental.affinity": {
+        "golang.go": 1,
+        "redhat.vscode-yaml": 2,
+        "rust-lang.rust-analyzer": 3
+    },
+
+    // ============ File watcher / search ============
+    "files.watcherExclude": {
+        "**/.git/objects/**": true,
+        "**/.git/subtree-cache/**": true,
+        "**/.hg/store/**": true,
+        "**/node_modules/**": true,
+        "**/vendor/**": true,
+        "**/target/**": true,
+        "**/dist/**": true,
+        "**/bin/**": true,
+        "**/build/**": true,
+        "**/.zig-cache/**": true,
+        "**/zig-out/**": true,
+        "**/.venv/**": true,
+        "**/__pycache__/**": true,
+        "**/.terraform/**": true
+    },
+    "search.exclude": {
+        "**/node_modules": true,
+        "**/vendor": true,
+        "**/dist": true,
+        "**/build": true,
+        "**/zig-out": true,
+        "**/.zig-cache": true,
+        "**/*.code-search": true,
+        "**/go.sum": true,
+        "**/package-lock.json": true,
+        "**/pnpm-lock.yaml": true
+    },
+    "search.followSymlinks": false,
+
+    // ============ Full-text search ============
+    // Case-sensitive only when query contains capitals
+    "search.smartCase": true,
+    // Big repos (k8s-size): don't truncate at 512 hits
+    "search.maxResults": null,
+    // Calmer live-search on huge repos
+    "search.searchOnTypeDebouncePeriod": 600,
+    "search.showLineNumbers": true,
+    // PCRE2 (lookarounds, backrefs) engages automatically only when regex needs it,
+    // fast ripgrep stays the default engine
+    "search.mode": "auto",
+    "files.exclude": {
+        "**/.DS_Store": true,
+        "**/__pycache__": true
+    },
+
+    // ============ Editor rendering ============
+    "editor.minimap.enabled": false,
+    // Relative line numbers, vim-style
+    "editor.lineNumbers": "relative",
+    "editor.smoothScrolling": false,
+    "editor.cursorSmoothCaretAnimation": "off",
+    "editor.cursorBlinking": "solid",
+    "workbench.list.smoothScrolling": false,
+    "terminal.integrated.smoothScrolling": false,
+
+    // ============ Memory ============
+    "workbench.editor.limit.enabled": true,
+    "workbench.editor.limit.value": 30,
+
+    // ============ Quality of life ============
+    "files.autoSave": "afterDelay",
+    "files.autoSaveDelay": 200,
+    "explorer.confirmDelete": false,
+    "explorer.confirmDragAndDrop": false,
+    "git.autofetch": false,
+    "git.confirmSync": false,
+    "npm.autoDetect": "off",
+
+    // ============ Appearance ============
+    "workbench.colorTheme": "One Dark Pro",
+    "workbench.iconTheme": "material-icon-theme",
+    "editor.fontFamily": "'JetBrains Mono', Menlo, Monaco, 'Courier New', monospace",
+    "editor.fontLigatures": true,
+    "editor.fontSize": 15,
+
+    // Classic VS Code blue status bar (works with ANY theme),
+    // orange while debugging
+    "workbench.colorCustomizations": {
+        "statusBar.background": "#007ACC",
+        "statusBar.noFolderBackground": "#007ACC",
+        "statusBar.foreground": "#FFFFFF",
+        "statusBarItem.hoverBackground": "#ffffff33",
+        "statusBar.debuggingBackground": "#CC6633",
+        "statusBar.debuggingForeground": "#FFFFFF"
+    },
+
+    // ============ TypeScript / JavaScript ============
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "javascript.updateImportsOnFileMove.enabled": "always",
+
+    // Secondary side bar: open automatically in workspaces (Outline + Containers live there)
+    "workbench.secondarySideBar.defaultVisibility": "visibleInWorkspace",
+
+    // ============ Go ============
+    "go.toolsManagement.autoUpdate": false,
+    // Clicking an import jumps to local definition — no pkg.go.dev in browser
+    "gopls": {
+        "ui.navigation.importShortcut": "Definition"
+    },
+    "[go]": {
+        "editor.defaultFormatter": "golang.go"
+    },
+    "vs-kubernetes": {
+        "vscode-kubernetes.helm-path-mac": "/Users/maximkirienkov/.vs-kubernetes/tools/helm/darwin-arm64/helm"
+    },
+    "workbench.secondarySideBar.showLabels": false,
+    "workbench.activityBar.location": "top",
+
+    // ============ Mermaid: no lens / AI / telemetry noise ============
+    "mermaidChart.showGenerateDiagramCodeLens": false,
+    "mermaidChart.aiSkills.enabled": false,
+    "mermaidChart.aiSkills.promptOnDetect": false,
+    "mermaidChart.createDiagramFromStage.enabled": false,
+    "mermaidChart.preCommitSync.enabled": false,
+    "mermaidChart.enableTelemetry": false
+}

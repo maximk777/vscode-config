@@ -1,0 +1,52 @@
+// Custom keybindings — one-hand (left) layer on Option/Caps.
+// All keys are left-hand only: Q W E R T / A S D F G / Z X C V B.
+// Registry: ~/vscode/HOTKEYS.md
+[
+    // ===== Navigation (home row, mnemonic) =====
+    // Back/Forward nvim-style (jumplist): ctrl+o / ctrl+i
+    { "key": "ctrl+o", "command": "workbench.action.navigateBack" },
+    { "key": "ctrl+i", "command": "workbench.action.navigateForward" },
+    { "key": "alt+s", "command": "workbench.action.gotoSymbol" },
+    { "key": "alt+d", "command": "editor.action.revealDefinition" },
+    { "key": "alt+g", "command": "workbench.action.gotoLine" },
+    { "key": "alt+r", "command": "workbench.action.openRecent" },
+    { "key": "alt+w", "command": "workbench.action.showAllSymbols" },
+
+    // ===== Editor =====
+    // Format document (files open via Cmd+P, F slot given to Format)
+    { "key": "alt+f", "command": "editor.action.formatDocument", "when": "editorHasDocumentFormattingProvider && editorTextFocus && !editorReadonly" },
+
+    // ===== F-key replacements (mac F-keys are media keys by default) =====
+    { "key": "alt+shift+d", "command": "editor.action.peekDefinition", "when": "editorHasDefinitionProvider && editorTextFocus && !inReferenceSearchEditor" },
+    { "key": "alt+shift+i", "command": "editor.action.goToImplementation", "when": "editorHasImplementationProvider && editorTextFocus && !inReferenceSearchEditor" },
+    { "key": "alt+shift+r", "command": "editor.action.goToReferences", "when": "editorHasReferenceProvider" },
+    { "key": "alt+shift+x", "command": "editor.action.marker.next" },
+
+    // ===== Vim-style jumps =====
+    // Half-page up/down (nvim ctrl+u/ctrl+d), page up/down (ctrl+b/ctrl+f)
+    { "key": "ctrl+u", "command": "editorScroll", "args": { "to": "up", "by": "halfPage", "value": 1, "revealCursor": true }, "when": "editorTextFocus" },
+    { "key": "ctrl+d", "command": "editorScroll", "args": { "to": "down", "by": "halfPage", "value": 1, "revealCursor": true }, "when": "editorTextFocus" },
+    { "key": "ctrl+b", "command": "editorScroll", "args": { "to": "up", "by": "page", "value": 1, "revealCursor": true }, "when": "editorTextFocus" },
+    { "key": "ctrl+f", "command": "editorScroll", "args": { "to": "down", "by": "page", "value": 1, "revealCursor": true }, "when": "editorTextFocus" },
+
+    // ===== Cmd+W: close tab, never the last one =====
+    { "key": "cmd+w", "command": "-workbench.action.closeActiveEditor" },
+    { "key": "cmd+w", "command": "workbench.action.closeActiveEditor", "when": "groupEditorsCount > 1" },
+
+    // ===== Layout =====
+    // JetBrains-style scratch land: opens ~/vscode/scratch in its own window
+    { "key": "alt+n", "command": "vscode.openFolder", "args": { "uri": "file:///Users/maximkirienkov/vscode/scratch", "forceNewWindow": true } },
+    // Explorer toggle: hide sidebar if explorer visible, show+focus if not
+    { "key": "alt+e", "command": "workbench.action.toggleSidebarVisibility", "when": "explorerViewletVisible" },
+    { "key": "alt+e", "command": "workbench.view.explorer", "when": "!explorerViewletVisible" },
+    // Full-text search across workspace (C = Content search)
+    { "key": "alt+c", "command": "workbench.action.findInFiles" },
+    { "key": "alt+q", "command": "workbench.action.togglePanel" },
+    { "key": "alt+t", "command": "workbench.action.terminal.toggleTerminal" },
+    { "key": "alt+x", "command": "workbench.actions.view.problems" },
+
+    // ===== Go workflow =====
+    { "key": "alt+b", "command": "go.toggle.test.file", "when": "editorTextFocus && editorLangId == go" },
+    { "key": "alt+v", "command": "go.test.cursor", "when": "editorTextFocus && editorLangId == go" },
+    { "key": "alt+shift+v", "command": "go.test.file", "when": "editorTextFocus && editorLangId == go" }
+]
