@@ -42,16 +42,29 @@
     { "key": "cmd+w", "command": "workbench.action.closeActiveEditor", "when": "groupEditorsCount > 1" },
 
     // ===== Layout =====
-    // JetBrains-style scratch land: opens ~/vscode/scratch in its own window
-    { "key": "alt+n", "command": "vscode.openFolder", "args": { "uri": "file:///Users/maximkirienkov/vscode/scratch", "forceNewWindow": true } },
+    // Scratch land: opens ~/vscode/scratch in its own window
+    // (alt+j — alt+n is a dead key on the US layout)
+    { "key": "alt+j", "command": "vscode.openFolder", "args": { "uri": "file:///Users/maximkirienkov/vscode/scratch", "forceNewWindow": true } },
     // Explorer toggle: hide sidebar if explorer visible, show+focus if not
-    { "key": "alt+e", "command": "workbench.action.toggleSidebarVisibility", "when": "explorerViewletVisible" },
-    { "key": "alt+e", "command": "workbench.view.explorer", "when": "!explorerViewletVisible" },
+    // (alt+h — alt+e is a dead key on the US layout)
+    { "key": "alt+h", "command": "workbench.action.toggleSidebarVisibility", "when": "explorerViewletVisible" },
+    { "key": "alt+h", "command": "workbench.view.explorer", "when": "!explorerViewletVisible" },
     // Full-text search across workspace (C = Content search)
     { "key": "alt+c", "command": "workbench.action.findInFiles" },
     { "key": "alt+q", "command": "workbench.action.togglePanel" },
     { "key": "alt+t", "command": "workbench.action.terminal.toggleTerminal" },
     { "key": "alt+x", "command": "workbench.actions.view.problems" },
+    // nvim K: hover info under cursor
+    { "key": "alt+k", "command": "editor.action.showHover", "when": "editorTextFocus" },
+
+    // ===== Cmd+E / Cmd+R: mac legacy defaults replaced =====
+    // cmd+e was a legacy quickOpen alias (duplicate of cmd+p)
+    { "key": "cmd+e", "command": "-workbench.action.quickOpen" },
+    { "key": "cmd+e", "command": "workbench.action.toggleSidebarVisibility", "when": "explorerViewletVisible" },
+    { "key": "cmd+e", "command": "workbench.view.explorer", "when": "!explorerViewletVisible" },
+    // cmd+r was Reload Window
+    { "key": "cmd+r", "command": "-workbench.action.reloadWindow" },
+    { "key": "cmd+r", "command": "workbench.action.openRecent" },
 
     // ===== Go workflow =====
     { "key": "alt+b", "command": "go.toggle.test.file", "when": "editorTextFocus && editorLangId == go" },

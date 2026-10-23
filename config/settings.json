@@ -87,6 +87,9 @@
     "editor.minimap.enabled": false,
     // Relative line numbers, vim-style
     "editor.lineNumbers": "relative",
+    // nvim scrolloff: keep the cursor away from screen edges
+    "editor.cursorSurroundingLines": 8,
+    "editor.cursorSurroundingLinesStyle": "all",
     "editor.smoothScrolling": false,
     "editor.cursorSmoothCaretAnimation": "off",
     "editor.cursorBlinking": "solid",
