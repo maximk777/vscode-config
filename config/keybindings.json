@@ -29,6 +29,14 @@
     { "key": "ctrl+b", "command": "editorScroll", "args": { "to": "up", "by": "page", "value": 1, "revealCursor": true }, "when": "editorTextFocus" },
     { "key": "ctrl+f", "command": "editorScroll", "args": { "to": "down", "by": "page", "value": 1, "revealCursor": true }, "when": "editorTextFocus" },
 
+    // ===== Cmd+K selection layer (vim text-object-ish) =====
+    // Around: walk up the syntax tree — word → expr → statement → block → function
+    { "key": "cmd+k a", "command": "editor.action.smartSelect.grow", "when": "editorTextFocus" },
+    // Inside: walk back down
+    { "key": "cmd+k i", "command": "editor.action.smartSelect.shrink", "when": "editorTextFocus" },
+    // One-shot: select the nearest bracket pair around the cursor
+    { "key": "cmd+k b", "command": "editor.action.selectToBracket", "args": { "selectBrackets": true }, "when": "editorTextFocus" },
+
     // ===== Cmd+W: close tab, never the last one =====
     { "key": "cmd+w", "command": "-workbench.action.closeActiveEditor" },
     { "key": "cmd+w", "command": "workbench.action.closeActiveEditor", "when": "groupEditorsCount > 1" },
