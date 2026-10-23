@@ -85,8 +85,6 @@
 
     // ============ Editor rendering ============
     "editor.minimap.enabled": false,
-    // Relative line numbers, vim-style
-    "editor.lineNumbers": "relative",
     // nvim scrolloff: keep the cursor away from screen edges.
     // "default" = keyboard only; mouse selection never snaps the viewport
     "editor.cursorSurroundingLines": 8,
