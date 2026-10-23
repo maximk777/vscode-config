@@ -87,14 +87,17 @@
     "editor.minimap.enabled": false,
     // Relative line numbers, vim-style
     "editor.lineNumbers": "relative",
-    // nvim scrolloff: keep the cursor away from screen edges
+    // nvim scrolloff: keep the cursor away from screen edges.
+    // "default" = keyboard only; mouse selection never snaps the viewport
     "editor.cursorSurroundingLines": 8,
-    "editor.cursorSurroundingLinesStyle": "all",
-    "editor.smoothScrolling": false,
-    "editor.cursorSmoothCaretAnimation": "off",
+    "editor.cursorSurroundingLinesStyle": "default",
+    // Goland-style smooth scrolling (cheap, editor + lists)
+    "editor.smoothScrolling": true,
+    "workbench.list.smoothScrolling": true,
+    "terminal.integrated.smoothScrolling": true,
+    // Stop at the real end of the file — no runaway empty space
+    "editor.scrollBeyondLastLine": false,
     "editor.cursorBlinking": "solid",
-    "workbench.list.smoothScrolling": false,
-    "terminal.integrated.smoothScrolling": false,
 
     // ============ Memory ============
     "workbench.editor.limit.enabled": true,
