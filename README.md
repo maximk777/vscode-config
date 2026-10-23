@@ -13,6 +13,7 @@ hotkey layer, warm background launch, JetBrains-style scratch folder.
 | `extensions.txt` | 15 extensions (Go, TS, Zig, Rust, Python, k8s/containers) |
 | `HOTKEYS.md` | Full hotkey registry, ordered by learning priority |
 | `install.sh` | One-shot bootstrap |
+| `sync.sh` | Live configs → repo: copy, validate, commit, push (`--no-push` to skip push) |
 
 ## Install
 
