@@ -112,9 +112,6 @@
     // ============ Appearance ============
     "workbench.colorTheme": "One Dark Pro",
     "workbench.iconTheme": "material-icon-theme",
-    "editor.fontFamily": "'JetBrains Mono', Menlo, Monaco, 'Courier New', monospace",
-    "editor.fontLigatures": true,
-    "editor.fontSize": 15,
 
     // Classic VS Code blue status bar (works with ANY theme),
     // orange while debugging
@@ -144,7 +141,8 @@
         "editor.defaultFormatter": "golang.go"
     },
     "vs-kubernetes": {
-        "vscode-kubernetes.helm-path-mac": "/Users/maximkirienkov/.vs-kubernetes/tools/helm/darwin-arm64/helm"
+        "vscode-kubernetes.helm-path-mac": "/Users/maximkirienkov/.vs-kubernetes/tools/helm/darwin-arm64/helm",
+        "vscode-kubernetes.minikube-path-mac": "/Users/maximkirienkov/.vs-kubernetes/tools/minikube/darwin-arm64/minikube"
     },
     "workbench.secondarySideBar.showLabels": false,
     "workbench.activityBar.location": "top",
