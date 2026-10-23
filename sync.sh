@@ -9,8 +9,8 @@ PUSH=1
 [ "${1:-}" = "--no-push" ] && PUSH=0
 
 command -v code >/dev/null || { echo "error: 'code' CLI not on PATH"; exit 1; }
-command -v jq >/dev/null || { echo "note: jq not found, skipping JSON validation"; }
-validate() { command -v jq >/dev/null && jq empty "$1" || python3 -c "import json,re,sys; json.loads(re.sub(r'^\s*//.*$','',open(sys.argv[1]).read(),flags=8))" "$1"; }
+# Configs are JSONC (comments) — jq chokes on them, python handles both
+validate() { python3 -c "import json,re,sys; json.loads(re.sub(r'^\s*//.*$','',open(sys.argv[1]).read(),flags=8))" "$1"; }
 
 # 1. Pull live configs + refresh extension list
 cp "$USER_DIR/settings.json"    "$DIR/config/settings.json"
