@@ -112,6 +112,8 @@
     // ============ Appearance ============
     "workbench.colorTheme": "One Dark Pro",
     "workbench.iconTheme": "material-icon-theme",
+    // Global UI zoom — applies to every window/project, so no manual scaling
+    "window.zoomLevel": 1,
 
     // Classic VS Code blue status bar (works with ANY theme),
     // orange while debugging
